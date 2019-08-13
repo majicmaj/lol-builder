@@ -1,23 +1,33 @@
 import React from "react";
 import logo from "./logo.svg";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 import "./App.css";
 import Champion from "./Component/Champion";
+import Team from "./Component/Team";
 
 function App() {
   return (
     <div className="App">
-      <nav class="navbar">
+      <nav className="navbar">
         <Link to="/">
-          <div class="icon" />
+          <div className="icon" />
         </Link>
-        <h2 id="leageteambuilder"> Leage team builder</h2>
-        <h2> Team</h2>
-        <h2> Champions</h2>
+        <Link to="/">
+          <h2 id="leageteambuilder"> Leage team builder</h2>
+        </Link>
+        <Link to="/team">
+          <h2> Team</h2>
+        </Link>
+        <Link to="/champions">
+          <h2> Champions</h2>
+        </Link>
       </nav>
       <main>
+        <Route path="/" exact render={routeProps => <Team {...routeProps} />} />
+        <Route path="/team" exact render={() => <Redirect to="/" />} />
+
         <Route
-          path="/"
+          path="/champions"
           exact
           render={routeProps => <Champion {...routeProps} />}
         />
