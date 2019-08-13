@@ -1,6 +1,10 @@
 const mongoose = require('../db/connection')
 
 const TeamSchema = new mongoose.Schema({
+    name: String,
+    attack: Number,
+    defense: Number,
+    magic: Number,
     top: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Champion'
@@ -21,6 +25,12 @@ const TeamSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Champion'
     },
+    champions : [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Champion'
+        }
+    ]
 })
 
 module.exports = mongoose.model("Team", TeamSchema)
