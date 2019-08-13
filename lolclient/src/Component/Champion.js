@@ -20,7 +20,7 @@ class Champion extends Component {
     return (
       <div className="championmain flexcolumn">
         <h2>All Champions</h2>
-        <div className="allchamcontain test">{champions}</div>
+        <div className="allchamcontain">{champions}</div>
       </div>
     );
   }

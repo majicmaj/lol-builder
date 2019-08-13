@@ -152,7 +152,7 @@ class App extends Component {
             <h2> Champions</h2>
           </Link>
         </nav>
-        <main>
+        <main class="flexcolumn">
           <Route
             path="/"
             exact

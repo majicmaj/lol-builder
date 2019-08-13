@@ -2,6 +2,9 @@
   color: aliceblue;
 }
 
+body {
+  background-color: rgb(20, 25, 46);
+}
 .test {
   border: 4px solid yellow;
 }
@@ -16,7 +19,6 @@
 .App {
   text-align: center;
   /* height: 100vh; */
-  background-color: rgb(20, 25, 46);
 }
 
 .icon {
@@ -59,6 +61,49 @@
   background-size: cover;
   margin-top: 30px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.eachcham:hover {
+  /* background-color: aquamarine; */
+  border: 2px solid rgba(255, 255, 0, 0.473);
+}
+
+.championdetailmain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80vw;
+  margin-top: 130px;
+}
+.champinfo {
+  width: 500px;
+  height: 400px;
+  text-align: left;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+}
+.champfull {
+  width: 500px;
+  height: 400px;
+}
+
+.teamtop {
+  width: 70vw;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.teamchamp {
+  width: 100px;
+  width: 100px;
+  border-radius: 200px;
 }
 
 #leageteambuilder {
