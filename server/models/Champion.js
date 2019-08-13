@@ -5,6 +5,7 @@ const ChampionSchema = new mongoose.Schema({
     title: String,
     blurb: String,
     icon: String,
+    screen: String,
     attack: Number,
     defense: Number,
     magic: Number,

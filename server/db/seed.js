@@ -5,7 +5,8 @@ const url = {
     v: 'https://ddragon.leagueoflegends.com/realms/na.json',
     head: 'http://ddragon.leagueoflegends.com/cdn/',
     tail: '/data/en_US/champion.json',
-    icon: 'http://ddragon.leagueoflegends.com/cdn/9.16.1/img/champion/'
+    icon: 'http://ddragon.leagueoflegends.com/cdn/9.16.1/img/champion/',
+    screen: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'
 }
 
 // Get latest game version
@@ -27,6 +28,7 @@ axios.get(url.v)
                         title: champions[c].title,
                         blurb: champions[c].blurb,
                         icon: url.icon + champions[c].image.full,
+                        screen: url.screen + c + '_0.jpg',
                         attack: champions[c].info.attack,
                         defense: champions[c].info.defense,
                         magic:  champions[c].info.magic,
