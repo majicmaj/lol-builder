@@ -1,10 +1,10 @@
 const express = require("express");
 const parser = require("body-parser");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use(parser.json());
-app.use(cors());
+// app.use(cors());
 
 app.use("/", require("./routes/champion"));
 app.use("/champion", require("./routes/champion"));
