@@ -6,6 +6,7 @@ const ChampionSchema = new mongoose.Schema({
     blurb: String,
     icon: String,
     screen: String,
+    full: String,
     attack: Number,
     defense: Number,
     magic: Number,
