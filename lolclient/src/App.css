@@ -1,33 +1,111 @@
-.App {
-  text-align: center;
+* {
+  color: aliceblue;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(20, 25, 46);
+}
+.test {
+  border: 4px solid yellow;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flexcolumn {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  text-align: center;
+  /* height: 100vh; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon {
+  background-image: url(./img/icon.png);
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 5vw;
+}
+.navbar {
+  background-color: rgb(43, 43, 43);
+  height: 9vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar h2 {
+  display: inline-block;
+  color: aliceblue;
+  margin: 0px;
+  margin-left: 20vw;
+}
+
+.championmain {
+}
+
+.allchamcontain {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  /* grid-column-gap: 10px; */
+}
+
+.eachcham {
+  height: 300px;
+  width: 200px;
+  background-size: cover;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.eachcham:hover {
+  /* background-color: aquamarine; */
+  border: 2px solid rgba(255, 255, 0, 0.473);
+}
+
+.championdetailmain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80vw;
+  margin-top: 130px;
+}
+.champinfo {
+  width: 500px;
+  height: 400px;
+  text-align: left;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+}
+.champfull {
+  width: 500px;
+  height: 400px;
+}
+
+.teamtop {
+  width: 70vw;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.teamchamp {
+  width: 100px;
+  width: 100px;
+  border-radius: 200px;
+}
+
+#leageteambuilder {
+  margin-left: 0px;
 }

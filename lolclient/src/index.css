@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* #root {
+  background-color: rgb(20, 25, 46);
+  min-height: 100vh;
+} */
