@@ -15,7 +15,7 @@
 
 .App {
   text-align: center;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: rgb(20, 25, 46);
 }
 
@@ -48,7 +48,19 @@
 
 .allchamcontain {
   width: 80vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  /* grid-column-gap: 10px; */
 }
+
+.eachcham {
+  height: 300px;
+  width: 200px;
+  background-size: cover;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
 #leageteambuilder {
   margin-left: 0px;
 }

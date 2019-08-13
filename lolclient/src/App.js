@@ -4,6 +4,7 @@ import { Route, Link, Redirect } from "react-router-dom";
 import "./App.css";
 import Champion from "./Component/Champion";
 import Team from "./Component/Team";
+import ChampionDetail from "./Component/ChampionDetail";
 
 const champ = [
   {
@@ -128,6 +129,12 @@ const champ = [
 ];
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      champ: champ
+    };
+  }
   render() {
     return (
       <div className="App">
@@ -156,7 +163,17 @@ class App extends Component {
           <Route
             path="/champions"
             exact
-            render={routeProps => <Champion {...routeProps} />}
+            render={routeProps => (
+              <Champion champ={this.state.champ} {...routeProps} />
+            )}
+          />
+
+          <Route
+            path="/champions/:championName"
+            exact
+            render={routeProps => (
+              <ChampionDetail champ={this.state.champ} {...routeProps} />
+            )}
           />
         </main>
       </div>
