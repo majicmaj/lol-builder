@@ -21,7 +21,11 @@ class Team extends Component {
   };
 
   placeTop = () => {
-    if (this.state.champion) {
+    if (this.state.champion &&
+      this.state.champion != this.state.mid &&
+      this.state.champion != this.state.bot &&
+      this.state.champion != this.state.jun &&
+      this.state.champion != this.state.sup ) {
       this.setState({
         top: this.state.champion,
         champion: ""
@@ -29,7 +33,11 @@ class Team extends Component {
     }
   };
   placeMid = () => {
-    if (this.state.champion) {
+    if (this.state.champion &&
+      this.state.champion != this.state.top &&
+      this.state.champion != this.state.bot &&
+      this.state.champion != this.state.jun &&
+      this.state.champion != this.state.sup) {
       this.setState({
         mid: this.state.champion,
         champion: ""
@@ -37,7 +45,11 @@ class Team extends Component {
     }
   };
   placeBot = () => {
-    if (this.state.champion) {
+    if (this.state.champion &&
+      this.state.champion != this.state.mid &&
+      this.state.champion != this.state.top &&
+      this.state.champion != this.state.jun &&
+      this.state.champion != this.state.sup) {
       this.setState({
         bot: this.state.champion,
         champion: ""
@@ -45,7 +57,11 @@ class Team extends Component {
     }
   };
   placeSup = () => {
-    if (this.state.champion) {
+    if (this.state.champion &&
+      this.state.champion != this.state.mid &&
+      this.state.champion != this.state.bot &&
+      this.state.champion != this.state.jun &&
+      this.state.champion != this.state.top) {
       this.setState({
         sup: this.state.champion,
         champion: ""
@@ -53,7 +69,11 @@ class Team extends Component {
     }
   };
   placeJun = () => {
-    if (this.state.champion) {
+    if (this.state.champion &&
+      this.state.champion != this.state.mid &&
+      this.state.champion != this.state.bot &&
+      this.state.champion != this.state.top &&
+      this.state.champion != this.state.sup) {
       this.setState({
         jun: this.state.champion,
         champion: ""
@@ -67,51 +87,60 @@ class Team extends Component {
   }
   submit = () => {
     console.log(this.state);
-    Axios.post("https://lolbuilder.herokuapp.com/team/create", {
-      name: this.state.name,
-      attack:
-        this.state.top.attack +
-        this.state.mid.attack +
-        this.state.bot.attack +
-        this.state.jun.attack +
-        this.state.sup.attack,
-      defense:
-        this.state.top.defense +
-        this.state.mid.defense +
-        this.state.bot.defense +
-        this.state.jun.defense +
-        this.state.sup.defense,
-      magic:
-        this.state.top.magic +
-        this.state.mid.magic +
-        this.state.bot.magic +
-        this.state.jun.magic +
-        this.state.sup.magic,
-      top: this.state.top._id,
-      mid: this.state.mid._id,
-      jun: this.state.jun._id,
-      bot: this.state.bot._id,
-      sup: this.state.sup._id,
-      champion: [
-        this.state.top._id,
-        this.state.mid._id,
-        this.state.jun._id,
-        this.state.bot._id,
-        this.state.sup._id
-      ]
-    }).then(res => {
-      console.log(res);
-      console.log(res.data);
-      this.setState({
-        jun: '',
-        top: '',
-        mid: '',
-        bot: '',
-        sup: '',
-        champion: ''
-      })
-    });
-  };
+    if (
+      this.state.top &&
+      this.state.jun &&
+      this.state.mid &&
+      this.state.bot &&
+      this.state.sup &&
+      this.state.name){
+      Axios.post("https://lolbuilder.herokuapp.com/team/create", {
+        name: this.state.name,
+        attack:
+          this.state.top.attack +
+          this.state.mid.attack +
+          this.state.bot.attack +
+          this.state.jun.attack +
+          this.state.sup.attack,
+        defense:
+          this.state.top.defense +
+          this.state.mid.defense +
+          this.state.bot.defense +
+          this.state.jun.defense +
+          this.state.sup.defense,
+        magic:
+          this.state.top.magic +
+          this.state.mid.magic +
+          this.state.bot.magic +
+          this.state.jun.magic +
+          this.state.sup.magic,
+        top: this.state.top._id,
+        mid: this.state.mid._id,
+        jun: this.state.jun._id,
+        bot: this.state.bot._id,
+        sup: this.state.sup._id,
+        champion: [
+          this.state.top._id,
+          this.state.mid._id,
+          this.state.jun._id,
+          this.state.bot._id,
+          this.state.sup._id
+        ]
+      }).then(res => {
+        console.log(res);
+        console.log(res.data);
+        this.setState({
+          jun: '',
+          top: '',
+          mid: '',
+          bot: '',
+          sup: '',
+          champion: ''
+        })
+      alert('submitted!')}
+    )
+  }else {alert('incomplete fields!')}
+}
   render() {
     let champsicon;
     if (this.props.champ) {
@@ -191,7 +220,7 @@ class Team extends Component {
         </div>
         <div className=''>
           <h4>Team Name</h4>
-          <input onInput={this.handleInputChange} className="lol-style" />
+          <input type='text' value={this.state.value} onInput={this.handleInputChange} className="lol-style" />
           <button className="lol-style" onClick={() => this.submit()}>
             Submit
           </button>

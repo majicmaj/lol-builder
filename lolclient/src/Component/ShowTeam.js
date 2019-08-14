@@ -5,6 +5,8 @@ class ShowTeam extends Component {
   render() {
     let teams;
     if (this.props.team !== []) {
+      console.log('this is props')
+      console.log(this.props)
       teams = this.props.team.map(each => {
         // console.log(this.props.champ);
         let topchamp = this.props.champ.filter(

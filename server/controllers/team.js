@@ -25,6 +25,6 @@ module.exports = {
     deleteByName: (req, res) => Team.findOneAndDelete({ name: req.params.name })
         .then(team => res.json(team)),
 
-    deleteById: (req, res) => Team.findByIdAndDelte({ _id: req.params.id })
+    deleteById: (req, res) => Team.findByIdAndDelete({ _id: req.params.id })
         .then(team => res.json(team))
 }
