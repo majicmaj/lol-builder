@@ -141,7 +141,7 @@ class App extends Component {
     axios
       .get("https://lolbuilder.herokuapp.com/", { mode: "no-cors" })
       .then(allchamp => {
-        console.log(allchamp.data);
+        // console.log(allchamp.data);
         this.setState({ champ: allchamp.data });
       })
       .catch(err => {
@@ -166,11 +166,13 @@ class App extends Component {
             <h2> Champions</h2>
           </Link>
         </nav>
-        <main class="flexcolumn">
+        <main className="flexcolumn">
           <Route
             path="/"
             exact
-            render={routeProps => <Team {...routeProps} />}
+            render={routeProps => (
+              <Team champ={this.state.champ} {...routeProps} />
+            )}
           />
           <Route path="/team" exact render={() => <Redirect to="/" />} />
 

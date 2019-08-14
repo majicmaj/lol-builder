@@ -14,8 +14,8 @@ class ChampionDetail extends Component {
           style={{ backgroundImage: `url(${thischamp[0].full})` }}
         />
         <div class="champinfo">
-          <h2>ChampionDetail</h2>
-          <h3>{thischamp[0].name}</h3>
+          {/* <h2>ChampionDetail</h2> */}
+          <h2>{thischamp[0].name}</h2>
           <h3>{thischamp[0].title}</h3>
           <h3>{thischamp[0].blurb}</h3>
           <h3>attack: {thischamp[0].attack}</h3>

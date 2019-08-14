@@ -107,6 +107,22 @@ body {
   border-radius: 200px;
 }
 
+.teambottom {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around; */
+}
+.eachicon {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  background-size: cover;
+  border-radius: 20px;
+}
+
 #leageteambuilder {
   margin-left: 0px;
 }
