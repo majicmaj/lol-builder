@@ -122,6 +122,7 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
+              backgroundColor: "rgb(20, 25, 46)",
               backgroundImage: `url(${this.state.top.icon})`,
               border: "1px solid yellow"
             }}
@@ -132,6 +133,7 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
+              backgroundColor: "rgb(20, 25, 46)",
               backgroundImage: `url(${this.state.jun.icon})`,
               border: "1px solid yellow"
             }}
@@ -142,6 +144,7 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
+              backgroundColor: "rgb(20, 25, 46)",
               backgroundImage: `url(${this.state.mid.icon})`,
               border: "1px solid yellow"
             }}
@@ -152,6 +155,7 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
+              backgroundColor: "rgb(20, 25, 46)",
               backgroundImage: `url(${this.state.bot.icon})`,
               border: "1px solid yellow"
             }}
@@ -162,6 +166,7 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
+              backgroundColor: "rgb(20, 25, 46)",
               backgroundImage: `url(${this.state.sup.icon})`,
               border: "1px solid yellow"
             }}
