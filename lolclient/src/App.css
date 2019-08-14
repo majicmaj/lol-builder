@@ -52,10 +52,11 @@ body {
   display: inline-block;
   color: aliceblue;
   margin: 0px;
-  margin-left: 20vw;
+  margin-left: 10vw;
 }
 
-.championmain {}
+.championmain {
+}
 
 .allchamcontain {
   width: 80vw;
@@ -132,10 +133,23 @@ body {
   margin-top: 10px;
   background-size: cover;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .eachicon:hover {
   border: 2px solid rgba(255, 255, 0, 0.575);
+}
+/* showteam/------------------------------ */
+.eachteam {
+  width: 70vw;
+  height: 300px;
+  border: rgba(233, 233, 224, 0.384) 2px solid;
+}
+
+.teamicons {
+  margin: auto 10px;
 }
 
 #leageteambuilder {

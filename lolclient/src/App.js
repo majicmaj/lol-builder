@@ -6,6 +6,8 @@ import Champion from "./Component/Champion";
 import Team from "./Component/Team";
 import ChampionDetail from "./Component/ChampionDetail";
 import axios from "axios";
+import ShowTeam from "./Component/ShowTeam";
+// import ShowTeam from "./Component/ShowTeam";
 
 // const champ = [
 //   {
@@ -133,7 +135,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      champ: ""
+      champ: "",
+      team: []
     };
   }
 
@@ -143,6 +146,16 @@ class App extends Component {
       .then(allchamp => {
         console.log(allchamp.data);
         this.setState({ champ: allchamp.data });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+    axios
+      .get("https://lolbuilder.herokuapp.com/team", { mode: "no-cors" })
+      .then(teams => {
+        console.log(teams.data);
+        this.setState({ team: teams.data });
       })
       .catch(err => {
         console.error(err);
@@ -161,6 +174,9 @@ class App extends Component {
           </Link>
           <Link to="/team">
             <h2> Team</h2>
+          </Link>
+          <Link to="/showteam">
+            <h2> ShowTeam</h2>
           </Link>
           <Link to="/champions">
             <h2> Champions</h2>
@@ -189,6 +205,18 @@ class App extends Component {
             exact
             render={routeProps => (
               <ChampionDetail champ={this.state.champ} {...routeProps} />
+            )}
+          />
+
+          <Route
+            path="/showteam"
+            exact
+            render={routeProps => (
+              <ShowTeam
+                team={this.state.team}
+                champ={this.state.champ}
+                {...routeProps}
+              />
             )}
           />
         </main>
