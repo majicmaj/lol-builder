@@ -135,6 +135,9 @@ body {
   margin-top: 10px;
   background-size: cover;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .eachicon:hover {

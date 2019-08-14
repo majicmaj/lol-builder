@@ -28,7 +28,7 @@ class ShowTeam extends Component {
             <h3>Team Name: {each.name}</h3>
             <div class="teamiconcontain">
               {" "}
-              <img class="teamicons" src={topchamp[0].icon} />
+              <img class="teamicons" data-role="top" src={topchamp[0].icon} />
               <img class="teamicons" src={jgchamp[0].icon} />
               <img class="teamicons" src={midchamp[0].icon} />
               <img class="teamicons" src={adcchamp[0].icon} />

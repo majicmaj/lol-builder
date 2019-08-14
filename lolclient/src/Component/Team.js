@@ -109,7 +109,7 @@ class Team extends Component {
             style={{ backgroundImage: `url(${each.icon})` }}
             onClick={() => this.handleClick(each)}
           >
-            <h4>{each.name}</h4>
+            <p>{each.name}</p>
           </div>
         );
       });
@@ -122,22 +122,22 @@ class Team extends Component {
           <div
             className="eachicon"
             style={{
-              backgroundImage: `url(${this.state.jun.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeJun()}
-          >
-            <h4>{this.state.jun.name}</h4>
-          </div>
-          <div
-            className="eachicon"
-            style={{
               backgroundImage: `url(${this.state.top.icon})`,
               border: "1px solid yellow"
             }}
             onClick={() => this.placeTop()}
           >
             <h4>{this.state.top.name}</h4>
+          </div>
+          <div
+            className="eachicon"
+            style={{
+              backgroundImage: `url(${this.state.jun.icon})`,
+              border: "1px solid yellow"
+            }}
+            onClick={() => this.placeJun()}
+          >
+            <h4>{this.state.jun.name}</h4>
           </div>
           <div
             className="eachicon"
