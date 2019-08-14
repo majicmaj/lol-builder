@@ -60,11 +60,13 @@ class Team extends Component {
       });
     }
   };
-  handleInputChange = (event) => {
+
+  handleInputChange = event => {
     this.setState({
       name: event.target.value
-    })
-  }
+    });
+  };
+
   submit = () => {
     console.log(this.state);
     Axios.post("https://lolbuilder.herokuapp.com/team/create", {
@@ -104,6 +106,7 @@ class Team extends Component {
       console.log(res.data);
     });
   };
+
   render() {
     let champsicon;
     if (this.props.champ) {
@@ -123,71 +126,74 @@ class Team extends Component {
 
     return (
       <div>
-        <h1>Create a team</h1>
-        <div className="teamtop">
-          <div
-            className="eachicon"
-            style={{
-              backgroundColor: "rgb(20, 25, 46)",
-              backgroundImage: `url(${this.state.top.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeTop()}
-          >
-            <h4>{this.state.top.name}</h4>
+        <div class="topmain">
+          <h1>Create a team</h1>
+          <div className="teamtop">
+            <div
+              className="eachicon"
+              style={{
+                backgroundColor: "rgb(20, 25, 46)",
+                backgroundImage: `url(${this.state.top.icon})`,
+                border: "1px solid yellow"
+              }}
+              onClick={() => this.placeTop()}
+            >
+              <h4>{this.state.top.name}</h4>
+            </div>
+            <div
+              className="eachicon"
+              style={{
+                backgroundColor: "rgb(20, 25, 46)",
+                backgroundImage: `url(${this.state.jun.icon})`,
+                border: "1px solid yellow"
+              }}
+              onClick={() => this.placeJun()}
+            >
+              <h4>{this.state.jun.name}</h4>
+            </div>
+            <div
+              className="eachicon"
+              style={{
+                backgroundColor: "rgb(20, 25, 46)",
+                backgroundImage: `url(${this.state.mid.icon})`,
+                border: "1px solid yellow"
+              }}
+              onClick={() => this.placeMid()}
+            >
+              <h4>{this.state.mid.name}</h4>
+            </div>
+            <div
+              className="eachicon"
+              style={{
+                backgroundColor: "rgb(20, 25, 46)",
+                backgroundImage: `url(${this.state.bot.icon})`,
+                border: "1px solid yellow"
+              }}
+              onClick={() => this.placeBot()}
+            >
+              <h4>{this.state.bot.name}</h4>
+            </div>
+            <div
+              className="eachicon"
+              style={{
+                backgroundColor: "rgb(20, 25, 46)",
+                backgroundImage: `url(${this.state.sup.icon})`,
+                border: "1px solid yellow"
+              }}
+              onClick={() => this.placeSup()}
+            >
+              <h4>{this.state.sup.name}</h4>
+            </div>
           </div>
-          <div
-            className="eachicon"
-            style={{
-              backgroundColor: "rgb(20, 25, 46)",
-              backgroundImage: `url(${this.state.jun.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeJun()}
-          >
-            <h4>{this.state.jun.name}</h4>
-          </div>
-          <div
-            className="eachicon"
-            style={{
-              backgroundColor: "rgb(20, 25, 46)",
-              backgroundImage: `url(${this.state.mid.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeMid()}
-          >
-            <h4>{this.state.mid.name}</h4>
-          </div>
-          <div
-            className="eachicon"
-            style={{
-              backgroundColor: "rgb(20, 25, 46)",
-              backgroundImage: `url(${this.state.bot.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeBot()}
-          >
-            <h4>{this.state.bot.name}</h4>
-          </div>
-          <div
-            className="eachicon"
-            style={{
-              backgroundColor: "rgb(20, 25, 46)",
-              backgroundImage: `url(${this.state.sup.icon})`,
-              border: "1px solid yellow"
-            }}
-            onClick={() => this.placeSup()}
-          >
-            <h4>{this.state.sup.name}</h4>
+          <div className="">
+            <h4>Team Name</h4>
+            <input onInput={this.handleInputChange} className="lol-style" />
+            <button className="lol-style" onClick={() => this.submit()}>
+              Submit
+            </button>
           </div>
         </div>
-        <div className=''>
-          <h4>Team Name</h4>
-          <input onInput={this.handleInputChange} className="lol-style" />
-          <button className="lol-style" onClick={() => this.submit()}>
-            Submit
-          </button>
-        </div>
+
         <div className="teambottom">{champsicon}</div>
       </div>
     );

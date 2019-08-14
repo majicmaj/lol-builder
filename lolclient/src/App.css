@@ -112,6 +112,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* background-color: rgba(20, 25, 46, 0.685); */
+}
+.topmain {
+  background-color: rgba(20, 25, 46, 0.685);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .teamchamp {
@@ -150,6 +156,7 @@ body {
   width: 70vw;
   height: 300px;
   border: rgba(233, 233, 224, 0.384) 2px solid;
+  background-color: rgba(20, 25, 46, 0.685);
 }
 
 .teamicons {
