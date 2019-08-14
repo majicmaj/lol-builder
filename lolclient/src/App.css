@@ -105,6 +105,7 @@ body {
   width: 100px;
   width: 100px;
   border-radius: 200px;
+  border: 3px solid rgb(201, 201, 201);
 }
 
 .teambottom {
@@ -121,6 +122,9 @@ body {
   margin-top: 10px;
   background-size: cover;
   border-radius: 20px;
+}
+.eachicon:hover {
+  border: 2px solid rgba(255, 255, 0, 0.575);
 }
 
 #leageteambuilder {

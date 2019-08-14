@@ -21,24 +21,24 @@ class Team extends Component {
     return (
       <div>
         <h1>This is the team page</h1>
-        <div className="teamtop test">
-          <div className="teamchamp test" data-role="top">
+        <div className="teamtop">
+          <div className="teamchamp" data-role="top">
             top
           </div>
-          <div className="teamchamp test" data-role="top">
+          <div className="teamchamp" data-role="top">
             jg
           </div>
-          <div className="teamchamp test" data-role="top">
+          <div className="teamchamp" data-role="top">
             mid
           </div>
-          <div className="teamchamp test" data-role="top">
+          <div className="teamchamp" data-role="top">
             adc
           </div>
-          <div className="teamchamp test" data-role="top">
+          <div className="teamchamp" data-role="top">
             sup
           </div>
         </div>
-        <div className="teambottom test">{champsicon}</div>
+        <div className="teambottom">{champsicon}</div>
       </div>
     );
   }
