@@ -140,8 +140,9 @@ class App extends Component {
   componentDidMount() {
     axios
       .get("https://lolbuilder.herokuapp.com/", { mode: "no-cors" })
-      .then(response => {
-        console.log(response);
+      .then(allchamp => {
+        console.log(allchamp.data);
+        this.setState({ champ: allchamp.data });
       })
       .catch(err => {
         console.error(err);

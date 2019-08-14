@@ -11,7 +11,7 @@ class ChampionDetail extends Component {
       <div class="championdetailmain">
         <div
           class="champfull"
-          style={{ backgroundImage: `url(${thischamp[0].screen})` }}
+          style={{ backgroundImage: `url(${thischamp[0].full})` }}
         />
         <div class="champinfo">
           <h2>ChampionDetail</h2>
