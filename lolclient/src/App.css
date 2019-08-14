@@ -55,7 +55,8 @@ body {
   margin-left: 10vw;
 }
 
-.championmain {}
+.championmain {
+}
 
 .allchamcontain {
   width: 80vw;
@@ -143,6 +144,11 @@ body {
 .eachteam {
   width: 70vw;
   height: 300px;
+  border: rgba(233, 233, 224, 0.384) 2px solid;
+}
+
+.teamicons {
+  margin: auto 10px;
 }
 
 #leageteambuilder {

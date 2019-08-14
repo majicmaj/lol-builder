@@ -2,25 +2,38 @@ import React, { Component } from "react";
 import "../App.css";
 
 class ShowTeam extends Component {
-  //   findicon = champid => {
-  //     if (this.props.champ !== "") {
-  //       this.props.champ.filter(each => {
-  //         return each._id === champid;
-  //       });
-  //     }
-  //   };
   render() {
     let teams;
     if (this.props.team !== []) {
       teams = this.props.team.map(each => {
+        // console.log(this.props.champ);
+        let topchamp = this.props.champ.filter(
+          eachchamp => eachchamp._id === each.top
+        );
+        let jgchamp = this.props.champ.filter(
+          eachchamp => eachchamp._id === each.jun
+        );
+        let midchamp = this.props.champ.filter(
+          eachchamp => eachchamp._id === each.mid
+        );
+        let adcchamp = this.props.champ.filter(
+          eachchamp => eachchamp._id === each.bot
+        );
+        let supchamp = this.props.champ.filter(
+          eachchamp => eachchamp._id === each.sup
+        );
+
         return (
-          <div key={each.name} className="eachteam test">
-            <h3>{each.name}</h3>
-            <p>Top:{each.top}</p>
-            <p>Jun:{each.jun}</p>
-            <p>Mid:{each.mid}</p>
-            <p>Bot:{each.bot}</p>
-            <p>Sup:{each.sup}</p>
+          <div key={each._id} className="eachteam">
+            <h3>Team Name: {each.name}</h3>
+            <div class="teamiconcontain">
+              {" "}
+              <img class="teamicons" src={topchamp[0].icon} />
+              <img class="teamicons" src={jgchamp[0].icon} />
+              <img class="teamicons" src={midchamp[0].icon} />
+              <img class="teamicons" src={adcchamp[0].icon} />
+              <img class="teamicons" src={supchamp[0].icon} />
+            </div>
           </div>
         );
       });
