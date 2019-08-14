@@ -52,7 +52,7 @@ body {
   display: inline-block;
   color: aliceblue;
   margin: 0px;
-  margin-left: 20vw;
+  margin-left: 10vw;
 }
 
 .championmain {}
@@ -138,6 +138,11 @@ body {
 
 .eachicon:hover {
   border: 2px solid rgba(255, 255, 0, 0.575);
+}
+/* showteam/------------------------------ */
+.eachteam {
+  width: 70vw;
+  height: 300px;
 }
 
 #leageteambuilder {
