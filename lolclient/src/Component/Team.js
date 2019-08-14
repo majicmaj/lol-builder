@@ -126,7 +126,7 @@ class Team extends Component {
 
     return (
       <div>
-        <div class="topmain">
+        <div className="topmain">
           <h1>Create a team</h1>
           <div className="teamtop">
             <div

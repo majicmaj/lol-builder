@@ -4,6 +4,7 @@ import "../App.css";
 class ShowTeam extends Component {
   render() {
     let teams;
+    console.log(this.props);
     if (this.props.team !== []) {
       teams = this.props.team.map(each => {
         // console.log(this.props.champ);

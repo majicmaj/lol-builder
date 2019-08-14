@@ -144,7 +144,7 @@ class App extends Component {
     axios
       .get("https://lolbuilder.herokuapp.com/")
       .then(allchamp => {
-        console.log(allchamp.data);
+        // console.log(allchamp.data);
         this.setState({ champ: allchamp.data });
       })
       .catch(err => {
@@ -154,7 +154,7 @@ class App extends Component {
     axios
       .get("https://lolbuilder.herokuapp.com/team", { mode: "no-cors" })
       .then(teams => {
-        console.log(teams.data);
+        // console.log(teams.data);
         this.setState({ team: teams.data });
       })
       .catch(err => {
@@ -166,13 +166,13 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar">
-          <div class="leftnav">
+          <div className="leftnav">
             <Link to="/">
               <div className="icon" />
             </Link>
           </div>
 
-          <div class="rightnav">
+          <div className="rightnav">
             <Link to="/team">
               <h3> Team</h3>
             </Link>
