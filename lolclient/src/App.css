@@ -45,7 +45,7 @@ body {
   height: 60px;
   background-size: cover;
   display: inline-block;
-  margin-left: 5vw;
+  margin-left: 3vw;
 }
 
 .navbar {
@@ -67,7 +67,8 @@ body {
   display: flex;
 }
 
-.championmain {}
+.championmain {
+}
 
 .allchamcontain {
   width: 80vw;
@@ -139,7 +140,7 @@ body {
 .teambottom {
   width: 70vw;
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin-top: 40px;
   /* display: flex;
   flex-direction: row;
