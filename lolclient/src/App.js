@@ -170,16 +170,16 @@ class App extends Component {
             <div className="icon" />
           </Link>
           <Link to="/">
-            <h2 id="leageteambuilder"> Leage team builder</h2>
+            <h3 id="leageteambuilder"> Leage team builder</h3>
           </Link>
           <Link to="/team">
-            <h2> Team</h2>
+            <h3> Team</h3>
           </Link>
           <Link to="/showteam">
-            <h2> ShowTeam</h2>
+            <h3> ShowTeam</h3>
           </Link>
           <Link to="/champions">
-            <h2> Champions</h2>
+            <h3> Champions</h3>
           </Link>
         </nav>
         <main className="flexcolumn">

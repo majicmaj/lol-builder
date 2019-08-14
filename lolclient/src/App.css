@@ -11,7 +11,10 @@
 }
 
 body {
-  background-color: rgb(20, 25, 46);
+  background-image: url(./img//back.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .test {
@@ -40,15 +43,15 @@ body {
 }
 
 .navbar {
-  background-color: rgb(43, 43, 43);
-  height: 9vh;
+  background-color: rgb(27, 26, 53);
+  height: 11vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
 
-.navbar h2 {
+.navbar h3 {
   display: inline-block;
   color: aliceblue;
   margin: 0px;
@@ -122,6 +125,7 @@ body {
   width: 70vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 40px;
   /* display: flex;
   flex-direction: row;
   justify-content: space-around; */
