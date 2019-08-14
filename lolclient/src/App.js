@@ -144,7 +144,7 @@ class App extends Component {
     axios
       .get("https://lolbuilder.herokuapp.com/")
       .then(allchamp => {
-        console.log(allchamp.data);
+        // console.log(allchamp.data);
         this.setState({ champ: allchamp.data });
       })
       .catch(err => {
@@ -154,7 +154,7 @@ class App extends Component {
     axios
       .get("https://lolbuilder.herokuapp.com/team", { mode: "no-cors" })
       .then(teams => {
-        console.log(teams.data);
+        // console.log(teams.data);
         this.setState({ team: teams.data });
       })
       .catch(err => {
@@ -166,21 +166,23 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar">
-          <Link to="/">
-            <div className="icon" />
-          </Link>
-          <Link to="/">
-            <h3 id="leageteambuilder"> Leage team builder</h3>
-          </Link>
-          <Link to="/team">
-            <h3> Team</h3>
-          </Link>
-          <Link to="/showteam">
-            <h3> ShowTeam</h3>
-          </Link>
-          <Link to="/champions">
-            <h3> Champions</h3>
-          </Link>
+          <div className="leftnav">
+            <Link to="/">
+              <div className="icon" />
+            </Link>
+          </div>
+
+          <div className="rightnav">
+            <Link to="/team">
+              <h3> Team</h3>
+            </Link>
+            <Link to="/showteam">
+              <h3> ShowTeam</h3>
+            </Link>
+            <Link to="/champions">
+              <h3> Champions</h3>
+            </Link>
+          </div>
         </nav>
         <main className="flexcolumn">
           <Route

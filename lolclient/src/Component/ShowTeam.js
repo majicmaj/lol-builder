@@ -4,6 +4,7 @@ import "../App.css";
 class ShowTeam extends Component {
   render() {
     let teams;
+    console.log(this.props);
     if (this.props.team !== []) {
       console.log('this is props')
       console.log(this.props)

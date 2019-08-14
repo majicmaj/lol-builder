@@ -1,5 +1,6 @@
 * {
   color: aliceblue;
+  font-family: "Slabo 13px", serif;
 }
 
 .lol-style {
@@ -53,14 +54,17 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .navbar h3 {
   display: inline-block;
   color: aliceblue;
-  margin: 0px;
-  margin-left: 10vw;
+  margin: 0px 25px;
+}
+
+.leftnav {
+  display: flex;
 }
 
 .championmain {}
@@ -117,6 +121,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* background-color: rgba(20, 25, 46, 0.685); */
+}
+.topmain {
+  background-color: rgba(20, 25, 46, 0.685);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .teamchamp {
@@ -161,6 +171,7 @@ body {
   width: 70vw;
   height: 300px;
   border: rgba(233, 233, 224, 0.384) 2px solid;
+  background-color: rgba(20, 25, 46, 0.685);
 }
 
 .teamicons {
