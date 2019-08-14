@@ -8,6 +8,11 @@
   background-color: rgb(20, 25, 46);
   border-radius: 5px;
   padding: 10px;
+  font-size: 16px;
+}
+
+.lol-style:focus {
+  border: 1px solid white;
 }
 
 body {
@@ -58,8 +63,7 @@ body {
   margin-left: 10vw;
 }
 
-.championmain {
-}
+.championmain {}
 
 .allchamcontain {
   width: 80vw;
@@ -77,6 +81,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border: 2px solid black;
 }
 
 .eachcham:hover {
@@ -124,7 +129,7 @@ body {
 .teambottom {
   width: 70vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
   margin-top: 40px;
   /* display: flex;
   flex-direction: row;
@@ -140,12 +145,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border: 1px solid #000;
 }
 
 .eachicon:hover {
-  border: 2px solid rgba(255, 255, 0, 0.575);
+  border: 1px solid white;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
+
 /* showteam/------------------------------ */
+
 .eachteam {
   width: 70vw;
   height: 300px;

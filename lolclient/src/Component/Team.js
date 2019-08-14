@@ -102,6 +102,14 @@ class Team extends Component {
     }).then(res => {
       console.log(res);
       console.log(res.data);
+      this.setState({
+        jun: '',
+        top: '',
+        mid: '',
+        bot: '',
+        sup: '',
+        champion: ''
+      })
     });
   };
   render() {
