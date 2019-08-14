@@ -166,21 +166,23 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar">
-          <Link to="/">
-            <div className="icon" />
-          </Link>
-          <Link to="/">
-            <h3 id="leageteambuilder"> Leage team builder</h3>
-          </Link>
-          <Link to="/team">
-            <h3> Team</h3>
-          </Link>
-          <Link to="/showteam">
-            <h3> ShowTeam</h3>
-          </Link>
-          <Link to="/champions">
-            <h3> Champions</h3>
-          </Link>
+          <div class="leftnav">
+            <Link to="/">
+              <div className="icon" />
+            </Link>
+          </div>
+
+          <div class="rightnav">
+            <Link to="/team">
+              <h3> Team</h3>
+            </Link>
+            <Link to="/showteam">
+              <h3> ShowTeam</h3>
+            </Link>
+            <Link to="/champions">
+              <h3> Champions</h3>
+            </Link>
+          </div>
         </nav>
         <main className="flexcolumn">
           <Route
