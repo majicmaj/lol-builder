@@ -21,6 +21,9 @@ class ChampionDetail extends Component {
           <h3>attack: {thischamp[0].attack}</h3>
           <h3>defense: {thischamp[0].defense}</h3>
           <h3>magic: {thischamp[0].magic}</h3>
+          <svg height="300" width="300">
+            <polygon points="200,0 100,173 200,0" />
+          </svg>
         </div>
       </div>
     );
