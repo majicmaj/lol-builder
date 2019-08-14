@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import "../App.css";
 
 class ShowTeam extends Component {
-  findicon = champid => {
-    this.props.champ.filter(each => {
-      return each._id === champid;
-    });
-  };
+  //   findicon = champid => {
+  //     if (this.props.champ !== "") {
+  //       this.props.champ.filter(each => {
+  //         return each._id === champid;
+  //       });
+  //     }
+  //   };
   render() {
     let teams;
     if (this.props.team !== []) {
@@ -15,7 +17,6 @@ class ShowTeam extends Component {
           <div key={each.name} className="eachteam test">
             <h3>{each.name}</h3>
             <p>Top:{each.top}</p>
-            {/* <p>{this.findicon(each.top)[0].name}</p> */}
             <p>Jun:{each.jun}</p>
             <p>Mid:{each.mid}</p>
             <p>Bot:{each.bot}</p>
