@@ -138,7 +138,7 @@ class Team extends Component {
             <h4>{this.state.sup.name}</h4>
           </div>
         </div>
-        <div>
+        <div className=''>
           <h4>Team Name</h4>
           <input className='lol-style'></input>
           <button className='lol-style' onClick={() => this.submit()}>Submit</button>

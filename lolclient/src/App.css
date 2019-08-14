@@ -105,8 +105,6 @@ body {
 }
 
 .teamtop {
-  width: 70vw;
-  height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
