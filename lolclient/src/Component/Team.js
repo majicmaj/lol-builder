@@ -8,6 +8,7 @@ class Team extends Component {
     super();
     this.state = {
       champion: "",
+      name: "",
       jun: "",
       top: "",
       mid: "",
@@ -59,10 +60,15 @@ class Team extends Component {
       });
     }
   };
+  handleInputChange = (event) => {
+    this.setState({
+      name: event.target.value
+    })
+  }
   submit = () => {
     console.log(this.state);
     Axios.post("https://lolbuilder.herokuapp.com/team/create", {
-      name: this.state.top.name + "'s team",
+      name: this.state.name,
       attack:
         this.state.top.attack +
         this.state.mid.attack +
@@ -172,7 +178,7 @@ class Team extends Component {
         </div>
         <div className=''>
           <h4>Team Name</h4>
-          <input className="lol-style" />
+          <input onInput={this.handleInputChange} className="lol-style" />
           <button className="lol-style" onClick={() => this.submit()}>
             Submit
           </button>
