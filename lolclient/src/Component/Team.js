@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Route, Link, Redirect } from "react-router-dom";
 import "../App.css";
 import Axios from "axios";
+import RadarChart from 'react-svg-radar-chart';
+import 'react-svg-radar-chart/build/css/index.css';
 
 class Team extends Component {
   constructor() {
@@ -13,8 +15,24 @@ class Team extends Component {
       top: "",
       mid: "",
       bot: "",
-      sup: ""
+      sup: "",
+      data: [
+        {
+          data: {
+            attack: 0.01,
+            defense: 0.01,
+            magic: 0.01
+          },
+          meta: { color: '#0df' }
+        }
+      ],
+      captions: {
+        attack: 'Attack',
+        defense: 'Defense',
+        magic: 'Magic'
+      }
     };
+
   }
   handleClick = champion => {
     this.setState({ champion: champion });
@@ -31,7 +49,8 @@ class Team extends Component {
       this.setState({
         top: this.state.champion,
         champion: ""
-      });
+      },
+        this.updateChart);
     }
   };
   placeMid = () => {
@@ -45,7 +64,8 @@ class Team extends Component {
       this.setState({
         mid: this.state.champion,
         champion: ""
-      });
+      },
+        this.updateChart);
     }
   };
   placeBot = () => {
@@ -59,7 +79,8 @@ class Team extends Component {
       this.setState({
         bot: this.state.champion,
         champion: ""
-      });
+      },
+        this.updateChart);
     }
   };
   placeSup = () => {
@@ -73,10 +94,12 @@ class Team extends Component {
       this.setState({
         sup: this.state.champion,
         champion: ""
-      });
+      },
+        this.updateChart);
     }
   };
   placeJun = () => {
+    this.updateChart()
     if (
       this.state.champion &&
       this.state.champion != this.state.mid &&
@@ -87,7 +110,8 @@ class Team extends Component {
       this.setState({
         jun: this.state.champion,
         champion: ""
-      });
+      },
+        this.updateChart)
     }
   };
 
@@ -134,9 +158,50 @@ class Team extends Component {
     }).then(res => {
       console.log(res);
       console.log(res.data);
-    });
+      this.setState({
+        top: '',
+        jun: '',
+        bot: '',
+        mid: '',
+        sup: '',
+        champion: '',
+      })
+    }).then(() => alert('success!'));
   };
-
+  updateChart = () => {
+    console.log('UPDATED!!')
+    this.setState({
+      data: [
+        {
+          data: {
+            attack:
+              ((this.state.jun.attack || 0) +
+                (this.state.top.attack || 0) +
+                (this.state.bot.attack || 0) +
+                (this.state.sup.attack || 0) +
+                (this.state.mid.attack || 0) +
+                0.01) / 45,
+            defense:
+              ((this.state.jun.defense || 0) +
+                (this.state.top.defense || 0) +
+                (this.state.bot.defense || 0) +
+                (this.state.sup.defense || 0) +
+                (this.state.mid.defense || 0) +
+                0.01) / 45,
+            magic:
+              ((this.state.jun.magic || 0) +
+                (this.state.top.magic || 0) +
+                (this.state.bot.magic || 0) +
+                (this.state.sup.magic || 0)+
+                (this.state.mid.magic || 0) +
+                0.01) / 45,
+          },
+          meta: { color: '#0df' }
+        }
+      ],
+    })
+    this.forceUpdate()
+  }
   render() {
     let champsicon;
     if (this.props.champ) {
@@ -217,6 +282,13 @@ class Team extends Component {
               <h4>{this.state.sup.name}</h4>
             </div>
           </div>
+          <RadarChart
+            captions={this.state.captions}
+            data={this.state.data}
+            size={300}
+            scales={3}
+            className='chart'
+          />
           <div className="">
             <h4>Team Name</h4>
             <input onInput={this.handleInputChange} className="lol-style" />

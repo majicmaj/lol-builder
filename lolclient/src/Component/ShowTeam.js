@@ -29,9 +29,9 @@ class ShowTeam extends Component {
         const data = [
           {
             data: {
-              attack: each.attack / 50,
-              defense: each.defense / 50,
-              magic: each.magic / 50,
+              attack: each.attack / 45,
+              defense: each.defense / 45,
+              magic: each.magic / 45,
             },
             meta: { color: '#0df' }
           }
