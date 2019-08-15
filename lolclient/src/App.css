@@ -67,8 +67,7 @@ body {
   display: flex;
 }
 
-.championmain {
-}
+.championmain {}
 
 .allchamcontain {
   width: 80vw;
@@ -124,6 +123,7 @@ body {
   justify-content: space-around;
   /* background-color: rgba(20, 25, 46, 0.685); */
 }
+
 .topmain {
   background-color: rgba(20, 25, 46, 0.685);
   border-radius: 10px;
@@ -156,7 +156,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: 1px solid #000;
+  border: 1px solid /showteam#000;
 }
 
 .eachicon:hover {
@@ -169,16 +169,51 @@ body {
 /* showteam/------------------------------ */
 
 .eachteam {
-  width: 70vw;
-  height: 300px;
-  border: rgba(233, 233, 224, 0.384) 2px solid;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(20, 25, 46, 0.685);
 }
 
 .teamicons {
-  margin: auto 10px;
+  max-width: 100%;
+}
+
+.teamiconcontain {
+  display: flex;
+}
+
+.button {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button button {
+  width: 120px;
+  height: 60px;
 }
 
 #leageteambuilder {
   margin-left: 0px;
+}
+
+.teamstats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.displaystats {
+  fill: teal;
+  stroke: yellow;
+  stroke-width: 1;
+}
+
+.shape {
+  fill-opacity: 1;
 }

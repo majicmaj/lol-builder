@@ -159,6 +159,8 @@ class Team extends Component {
         <div className="topmain">
           <h1>Create a team</h1>
           <div className="teamtop">
+          </div>
+          <div className="teamtop">
             <div
               className="eachicon"
               style={{
