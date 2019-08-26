@@ -62,12 +62,17 @@
     stroke: #335 !important;
     stroke-width: 1 !important;
 }
-
+svg {
+    margin-top: 50px;
+}
 .caption {
     font-size: 12px;
     fill: #999 !important;
 }
 @media only screen and (max-width: 768px) {
+    .team_main {
+        padding: 10px;
+    }
     .icon {
         width: 64px;
         height: 64px;
@@ -79,5 +84,8 @@
     }
     .champName, .champStats {
         display: none;
+    }
+    svg {
+        margin-top: 10px;
     }
 }

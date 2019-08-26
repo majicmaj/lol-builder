@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 class Nav extends Component {
@@ -7,7 +7,7 @@ class Nav extends Component {
         return <nav className="navbar">
             <div className="leftnav">
                 <Link to="/">
-                    <div className="icon" />
+                    <div className="logo" />
                 </Link>
             </div>
 

@@ -1,26 +1,30 @@
 import React, { Component } from "react";
-import { Route, Link, Redirect } from "react-router-dom";
-import "../App.css";
+import { Link } from "react-router-dom";
+import "./Champion.css";
 
 class Champion extends Component {
   render() {
-    let champions = this.props.champ.map(eachcham => {
-      return (
-        <Link to={"/champions/" + eachcham.name}>
-          <div
-            className="eachcham"
-            key={eachcham.name}
-            style={{ backgroundImage: `url(${eachcham.screen})` }}
-          >
-            <p>{eachcham.name}</p>
-          </div>
-        </Link>
-      );
-    });
+    let champions
+    if (this.props.champions) {
+      console.log(this.props)
+      champions = this.props.champions.map(eachcham => {
+        return (
+          <Link key={eachcham.name} to={"/champions/" + eachcham.name}>
+            <div
+              className="champion"
+              key={eachcham.name}
+              style={{ backgroundImage: `url(${eachcham.screen})` }}
+            >
+              <p>{eachcham.name}</p>
+            </div>
+          </Link>
+        );
+      })
+    }
     return (
-      <div className="championmain flexcolumn">
+      <div className="champions_container">
         <h2>All Champions</h2>
-        <div className="allchamcontain">{champions}</div>
+        <div className="champions_wrapper">{champions}</div>
       </div>
     );
   }

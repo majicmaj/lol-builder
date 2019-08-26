@@ -1,31 +1,38 @@
 import React, { Component } from "react";
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
-import "../App.css";
+import "./ShowTeam.css";
+import Axios from "axios";
 
 class ShowTeam extends Component {
+  delete(that) {
+    Axios.delete('https://lolbuilder.herokuapp.com/team/delete/id/' + that.target.name)
+    .then(res=> {
+      console.log({res})
+      alert('deleted!')
+    })
+    .catch(error=> console.error(error))
+  }
   render() {
     let teams;
-    console.log(this.props);
-    if (this.props.team !== []) {
-      console.log('this is props')
-      console.log(this.props)
-      teams = this.props.team.map(each => {
-        let topchamp = this.props.champ.filter(
+    if (this.props.teams && this.props.champions) {
+      teams = this.props.teams.map(each => {
+        let topchamp = this.props.champions.filter(
           eachchamp => eachchamp._id === each.top
         );
-        let jgchamp = this.props.champ.filter(
+        console.log(topchamp)
+        let jgchamp = this.props.champions.filter(
           eachchamp => eachchamp._id === each.jun
         );
-        let midchamp = this.props.champ.filter(
+        let midchamp = this.props.champions.filter(
           eachchamp => eachchamp._id === each.mid
         );
-        let adcchamp = this.props.champ.filter(
+        let adcchamp = this.props.champions.filter(
           eachchamp => eachchamp._id === each.bot
         );
-        let supchamp = this.props.champ.filter(
+        let supchamp = this.props.champions.filter(
           eachchamp => eachchamp._id === each.sup
-        ); 
+        );
         const data = [
           {
             data: {
@@ -45,18 +52,14 @@ class ShowTeam extends Component {
         };
 
         return (
-          <div key={each._id} className="eachteam">
+          <div key={each._id} className="team_wrapper">
             <h3>{each.name}</h3>
             <div className="teamiconcontain">
-              <img className="teamicons" data-role="top" src={topchamp[0].icon} />
-              <img className="teamicons" src={jgchamp[0].icon} />
-              <img className="teamicons" src={midchamp[0].icon} />
-              <img className="teamicons" src={adcchamp[0].icon} />
-              <img className="teamicons" src={supchamp[0].icon} />
-              <div className='button'>
-                <button className='lol-style' >Edit</button>
-                <button className='lol-style'>Delete</button>
-              </div>
+              <img alt={topchamp[0].name} className="teamicons" src={topchamp[0].icon} />
+              <img alt={jgchamp[0].name}  className="teamicons" src={jgchamp[0].icon} />
+              <img alt={midchamp[0].name}  className="teamicons" src={midchamp[0].icon} />
+              <img alt={adcchamp[0].name}  className="teamicons" src={adcchamp[0].icon} />
+              <img alt={supchamp[0].name}  className="teamicons" src={supchamp[0].icon} />
             </div>
             <RadarChart
               captions={captions}
@@ -65,14 +68,19 @@ class ShowTeam extends Component {
               scales={3}
               className='chart'
             />
+            <div className='button'>
+              <button className='lol-style' >Edit</button>
+              <button className='lol-style' name={each._id} onClick={this.delete}>Delete</button>
+            </div>
+
           </div>
         );
       });
     }
 
     return (
-      <div className="showteam">
-        <h1>show all team</h1>
+      <div className="team_main">
+        <h1>Saved Teams</h1>
         {teams}
       </div>
     );

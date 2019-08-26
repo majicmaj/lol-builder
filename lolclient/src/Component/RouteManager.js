@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 //  CSS
 
@@ -38,7 +38,7 @@ class RouteManager extends Component {
                     path="/champions"
                     exact
                     render={routeProps => (
-                        <Champion champions={this.props.chamions} {...routeProps} />
+                        <Champion champions={this.props.champions} {...routeProps} />
                     )}
                 />
 
@@ -46,7 +46,7 @@ class RouteManager extends Component {
                     path="/champions/:championName"
                     exact
                     render={routeProps => (
-                        <ChampionDetail champ={this.state.champ} {...routeProps} />
+                        <ChampionDetail champ={this.props.champions} {...routeProps} />
                     )}
                 />
 
@@ -55,9 +55,8 @@ class RouteManager extends Component {
                     exact
                     render={routeProps => (
                         <ShowTeam
-                            team={this.state.team}
-                            champ={this.state.champ}
-                            {...routeProps}
+                            teams={this.props.teams}
+                            champions={this.props.champions}
                         />
                     )}
                 />

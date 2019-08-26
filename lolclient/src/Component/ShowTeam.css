@@ -1,0 +1,38 @@
+.team_main {
+    background: #000914;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.team_wrapper {
+    background: #001125;
+    max-width: 1024px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.teamicons {
+    height: 128px;
+    width: 128px;
+    border: 1px solid #fb0;
+}
+
+.button {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+}
+
+button.lol-style {
+    width: 100%;
+    background: #001731;
+}
+
+@media only screen and (max-width: 768px) {
+    .teamicons {
+        height: 64px;
+        width: 64px;
+    }
+}

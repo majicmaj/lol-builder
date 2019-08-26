@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Link, Redirect } from "react-router-dom";
 import "./Team.css";
 import Axios from "axios";
 import RadarChart from 'react-svg-radar-chart';
@@ -41,10 +40,10 @@ class Team extends Component {
   placeTop = () => {
     if (
       this.state.champion &&
-      this.state.champion != this.state.mid &&
-      this.state.champion != this.state.bot &&
-      this.state.champion != this.state.jun &&
-      this.state.champion != this.state.sup
+      this.state.champion !== this.state.mid &&
+      this.state.champion !== this.state.bot &&
+      this.state.champion !== this.state.jun &&
+      this.state.champion !== this.state.sup
     ) {
       this.setState({
         top: this.state.champion,
@@ -56,10 +55,10 @@ class Team extends Component {
   placeMid = () => {
     if (
       this.state.champion &&
-      this.state.champion != this.state.top &&
-      this.state.champion != this.state.bot &&
-      this.state.champion != this.state.jun &&
-      this.state.champion != this.state.sup
+      this.state.champion !== this.state.top &&
+      this.state.champion !== this.state.bot &&
+      this.state.champion !== this.state.jun &&
+      this.state.champion !== this.state.sup
     ) {
       this.setState({
         mid: this.state.champion,
@@ -71,10 +70,10 @@ class Team extends Component {
   placeBot = () => {
     if (
       this.state.champion &&
-      this.state.champion != this.state.mid &&
-      this.state.champion != this.state.top &&
-      this.state.champion != this.state.jun &&
-      this.state.champion != this.state.sup
+      this.state.champion !== this.state.mid &&
+      this.state.champion !== this.state.top &&
+      this.state.champion !== this.state.jun &&
+      this.state.champion !== this.state.sup
     ) {
       this.setState({
         bot: this.state.champion,
@@ -86,10 +85,10 @@ class Team extends Component {
   placeSup = () => {
     if (
       this.state.champion &&
-      this.state.champion != this.state.mid &&
-      this.state.champion != this.state.bot &&
-      this.state.champion != this.state.jun &&
-      this.state.champion != this.state.top
+      this.state.champion !== this.state.mid &&
+      this.state.champion !== this.state.bot &&
+      this.state.champion !== this.state.jun &&
+      this.state.champion !== this.state.top
     ) {
       this.setState({
         sup: this.state.champion,
@@ -102,10 +101,10 @@ class Team extends Component {
     this.updateChart()
     if (
       this.state.champion &&
-      this.state.champion != this.state.mid &&
-      this.state.champion != this.state.bot &&
-      this.state.champion != this.state.top &&
-      this.state.champion != this.state.sup
+      this.state.champion !== this.state.mid &&
+      this.state.champion !== this.state.bot &&
+      this.state.champion !== this.state.top &&
+      this.state.champion !== this.state.sup
     ) {
       this.setState({
         jun: this.state.champion,
@@ -123,51 +122,59 @@ class Team extends Component {
 
   submit = () => {
     console.log(this.state);
-    Axios.post("https://lolbuilder.herokuapp.com/team/create", {
-      name: this.state.name,
-      attack:
-        this.state.top.attack +
-        this.state.mid.attack +
-        this.state.bot.attack +
-        this.state.jun.attack +
-        this.state.sup.attack,
-      defense:
-        this.state.top.defense +
-        this.state.mid.defense +
-        this.state.bot.defense +
-        this.state.jun.defense +
-        this.state.sup.defense,
-      magic:
-        this.state.top.magic +
-        this.state.mid.magic +
-        this.state.bot.magic +
-        this.state.jun.magic +
-        this.state.sup.magic,
-      top: this.state.top._id,
-      mid: this.state.mid._id,
-      jun: this.state.jun._id,
-      bot: this.state.bot._id,
-      sup: this.state.sup._id,
-      champion: [
-        this.state.top._id,
-        this.state.mid._id,
-        this.state.jun._id,
-        this.state.bot._id,
-        this.state.sup._id
-      ]
-    }).then(res => {
-      console.log(res);
-      console.log(res.data);
-      this.setState({
-        top: '',
-        jun: '',
-        bot: '',
-        mid: '',
-        sup: '',
-        champion: '',
-      })
-    }).then(() => alert('success!'));
-  };
+    if (this.state.top &&
+      this.state.mid &&
+      this.state.bot &&
+      this.state.sup &&
+      this.state.jun &&
+      this.state.name) {
+      Axios.post("https://lolbuilder.herokuapp.com/team/create", {
+        name: this.state.name,
+        attack:
+          this.state.top.attack +
+          this.state.mid.attack +
+          this.state.bot.attack +
+          this.state.jun.attack +
+          this.state.sup.attack,
+        defense:
+          this.state.top.defense +
+          this.state.mid.defense +
+          this.state.bot.defense +
+          this.state.jun.defense +
+          this.state.sup.defense,
+        magic:
+          this.state.top.magic +
+          this.state.mid.magic +
+          this.state.bot.magic +
+          this.state.jun.magic +
+          this.state.sup.magic,
+        top: this.state.top._id,
+        mid: this.state.mid._id,
+        jun: this.state.jun._id,
+        bot: this.state.bot._id,
+        sup: this.state.sup._id,
+        champion: [
+          this.state.top._id,
+          this.state.mid._id,
+          this.state.jun._id,
+          this.state.bot._id,
+          this.state.sup._id
+        ]
+      }).then(res => {
+        console.log(res);
+        console.log(res.data);
+        this.setState({
+          top: '',
+          jun: '',
+          bot: '',
+          mid: '',
+          sup: '',
+          champion: '',
+        })
+      }).then(() => alert('success!'));
+    }else {alert('make sure all roles are filled.')}
+  }
+
   updateChart = () => {
     console.log('UPDATED!!')
     this.setState({
@@ -238,7 +245,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeTop()}
             >
-              <h4>{this.state.top.name}</h4>
+              <h3 className='champName'>{this.state.top.name}</h3>
             </div>
             <div
               className="icon"
@@ -249,7 +256,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeJun()}
             >
-              <h4>{this.state.jun.name}</h4>
+              <h3 className='champName'>{this.state.jun.name}</h3>
             </div>
             <div
               className="icon"
@@ -260,7 +267,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeMid()}
             >
-              <h4>{this.state.mid.name}</h4>
+              <h3 className='champName'>{this.state.mid.name}</h3>
             </div>
             <div
               className="icon"
@@ -271,7 +278,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeBot()}
             >
-              <h4>{this.state.bot.name}</h4>
+              <h3 className='champName'>{this.state.bot.name}</h3>
             </div>
             <div
               className="icon"
@@ -282,14 +289,14 @@ class Team extends Component {
               }}
               onClick={() => this.placeSup()}
             >
-              <h4>{this.state.sup.name}</h4>
+              <h3 className='champName'>{this.state.sup.name}</h3>
             </div>
           </div>
           <RadarChart
             captions={this.state.captions}
             data={this.state.data}
-            size={300}
-            scales={4}
+            size={250}
+            scales={3}
             className='chart'
           />
           <div className="">

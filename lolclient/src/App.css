@@ -23,28 +23,29 @@
   /* height: 100vh; */
 }
 
-.icon {
+.logo {
   background-image: url(./img/icon.png);
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background-size: cover;
   display: inline-block;
-  margin-left: 3vw;
 }
 
 .navbar {
-  background-color: rgb(27, 26, 53);
-  height: 11vh;
+  background: #012;
+  max-height: 96px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #223;
 }
 
 .navbar h3 {
   display: inline-block;
-  color: aliceblue;
-  margin: 0px 25px;
+  color: #eee;
+  padding: 8px;
 }
 
 .leftnav {
@@ -56,23 +57,6 @@
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   /* grid-column-gap: 10px; */
-}
-
-.eachcham {
-  height: 300px;
-  width: 200px;
-  background-size: cover;
-  margin-top: 30px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border: 2px solid black;
-}
-
-.eachcham:hover {
-  /* background-color: aquamarine; */
-  border: 2px solid rgba(255, 255, 0, 0.473);
 }
 
 .championdetailmain {
