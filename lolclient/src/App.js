@@ -13,7 +13,8 @@ class App extends Component {
     super();
     this.state = {
       champions: "",
-      teams: []
+      teams: [],
+      loaded: false
     };
   }
 
@@ -44,16 +45,25 @@ class App extends Component {
       });
   }
 
+
   render() {
-    return (
+    if (this.state.teams && this.state.champions) {
+      return (
       <div className="App">
         <Nav />
+        {this.content}
         <RouteManager
           champions={this.state.champions}
           teams={this.state.teams}
         />
+      </div>)
+    }
+    else return (
+      <div className="App">
+        <Nav />
+        <h1>loading...</h1>
       </div>
-    );
+    )
   }
 }
 

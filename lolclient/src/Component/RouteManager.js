@@ -46,7 +46,7 @@ class RouteManager extends Component {
                     path="/champions/:championName"
                     exact
                     render={routeProps => (
-                        <ChampionDetail champ={this.props.champions} {...routeProps} />
+                        <ChampionDetail champions={this.props.champions} {...routeProps} />
                     )}
                 />
 

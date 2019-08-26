@@ -1,0 +1,30 @@
+.championdetailmain {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+}
+
+.champfull {
+    width: 711px;
+    height: 419px;
+    border: 1px solid #fb0;
+    border-radius: 5px;
+}
+
+.champinfo {
+    width: 688px;
+    border: 1px solid #fb0;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.championdetail_wrapper {
+    display: flex;
+    justify-content: center;
+}
