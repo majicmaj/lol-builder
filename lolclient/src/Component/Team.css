@@ -1,0 +1,83 @@
+.icon {
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid #fb0;
+}
+
+.icon:hover {
+    border: 1px solid #ff0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1024px;
+    width: 100%;
+}
+
+.team_main {
+    background: #001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team_builder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1024px;
+}
+
+.team_picker {
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+}
+
+.champName {
+    position: relative;
+    top: 52px;
+    font-size: 18px;
+}
+
+.champStats {
+    position: relative;
+    top: 15px;
+    font-size: 14px;
+}
+
+.scale {
+    fill: #013 !important; 
+    stroke: #335 !important;
+    stroke-width: 1 !important;
+}
+
+.caption {
+    font-size: 12px;
+    fill: #999 !important;
+}
+@media only screen and (max-width: 768px) {
+    .icon {
+        width: 64px;
+        height: 64px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .team_picker {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    }
+    .champName, .champStats {
+        display: none;
+    }
+}

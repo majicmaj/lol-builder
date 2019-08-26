@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link, Redirect } from "react-router-dom";
-import "../App.css";
+import "./Team.css";
 import Axios from "axios";
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
@@ -31,7 +31,7 @@ class Team extends Component {
         defense: 'Defense',
         magic: 'Magic'
       }
-    };
+    }
 
   }
   handleClick = champion => {
@@ -192,7 +192,7 @@ class Team extends Component {
               ((this.state.jun.magic || 0) +
                 (this.state.top.magic || 0) +
                 (this.state.bot.magic || 0) +
-                (this.state.sup.magic || 0)+
+                (this.state.sup.magic || 0) +
                 (this.state.mid.magic || 0) +
                 0.01) / 45,
           },
@@ -203,79 +203,82 @@ class Team extends Component {
     this.forceUpdate()
   }
   render() {
+    console.log(this.props)
     let champsicon;
-    if (this.props.champ) {
-      champsicon = this.props.champ.map(each => {
+    if (this.props.champions) {
+      champsicon = this.props.champions.map(each => {
         return (
           <div
-            className="eachicon"
+            className="icon"
             key={each._id}
             style={{ backgroundImage: `url(${each.icon})` }}
             onClick={() => this.handleClick(each)}
           >
-            <p>{each.name}</p>
+            <h3 className='champName'>{each.name}</h3>
+            <p className='champStats'>A{each.attack},D{each.defense},M{each.magic}</p>
           </div>
         );
       });
     }
 
     return (
-      <div>
-        <div className="topmain">
-          <h1>Create a team</h1>
-          <div className="teamtop">
-          </div>
-          <div className="teamtop">
+      <main className='team_main'>
+        <div className='team_builder'>
+
+          <h1>Team builder</h1>
+          <p>Click on your desired champion's icons and then click on the position you would like to place them.</p>
+
+          <div className="team">
             <div
-              className="eachicon"
+              className="icon"
               style={{
-                backgroundColor: "rgb(20, 25, 46)",
+                backgroundColor: "#002",
                 backgroundImage: `url(${this.state.top.icon})`,
-                border: "1px solid yellow"
+                border: "1px solid #fb0"
               }}
               onClick={() => this.placeTop()}
             >
               <h4>{this.state.top.name}</h4>
             </div>
             <div
-              className="eachicon"
+              className="icon"
               style={{
-                backgroundColor: "rgb(20, 25, 46)",
+                backgroundColor: "#002",
                 backgroundImage: `url(${this.state.jun.icon})`,
-                border: "1px solid yellow"
+                border: "1px solid #fb0"
               }}
               onClick={() => this.placeJun()}
             >
               <h4>{this.state.jun.name}</h4>
             </div>
             <div
-              className="eachicon"
+              className="icon"
               style={{
-                backgroundColor: "rgb(20, 25, 46)",
+                backgroundColor: "#002",
                 backgroundImage: `url(${this.state.mid.icon})`,
-                border: "1px solid yellow"
+                border: "1px solid #fb0"
               }}
               onClick={() => this.placeMid()}
             >
               <h4>{this.state.mid.name}</h4>
             </div>
             <div
-              className="eachicon"
+              className="icon"
               style={{
-                backgroundColor: "rgb(20, 25, 46)",
+                backgroundColor: "#002",
                 backgroundImage: `url(${this.state.bot.icon})`,
-                border: "1px solid yellow"
+                border: "1px solid #fb0"
               }}
               onClick={() => this.placeBot()}
             >
               <h4>{this.state.bot.name}</h4>
             </div>
             <div
-              className="eachicon"
+              className="icon"
               style={{
-                backgroundColor: "rgb(20, 25, 46)",
+                backgroundColor: "#002",
                 backgroundImage: `url(${this.state.sup.icon})`,
-                border: "1px solid yellow"
+                border: "1px solid #fb0"
               }}
               onClick={() => this.placeSup()}
             >
@@ -286,7 +289,7 @@ class Team extends Component {
             captions={this.state.captions}
             data={this.state.data}
             size={300}
-            scales={3}
+            scales={4}
             className='chart'
           />
           <div className="">
@@ -297,9 +300,10 @@ class Team extends Component {
             </button>
           </div>
         </div>
-
-        <div className="teambottom">{champsicon}</div>
-      </div>
+        <div className='team_picker'>
+          {champsicon}
+        </div>
+      </main>
     );
   }
 }

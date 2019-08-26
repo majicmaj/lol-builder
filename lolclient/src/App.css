@@ -1,11 +1,6 @@
-* {
-  color: aliceblue;
-  font-family: "Slabo 13px", serif;
-}
-
 .lol-style {
-  color: #fc0;
-  border: 1px solid yellow;
+  color: #fb0;
+  border: 1px solid #fb0;
   background-color: rgb(20, 25, 46);
   border-radius: 5px;
   padding: 10px;
@@ -13,18 +8,7 @@
 }
 
 .lol-style:focus {
-  border: 1px solid white;
-}
-
-body {
-  background-image: url(./img//back.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-.test {
-  border: 4px solid yellow;
+  border: 1px solid #ff0;
 }
 
 .flexcolumn {
@@ -66,8 +50,6 @@ body {
 .leftnav {
   display: flex;
 }
-
-.championmain {}
 
 .allchamcontain {
   width: 80vw;
@@ -122,53 +104,11 @@ body {
   border: 5px solid rgba(14, 28, 73, 0.534);
 }
 
-.teamtop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  /* background-color: rgba(20, 25, 46, 0.685); */
-}
-
-.topmain {
-  background-color: rgba(20, 25, 46, 0.685);
-  border-radius: 10px;
-  padding: 20px;
-}
-
 .teamchamp {
   width: 100px;
   width: 100px;
   border-radius: 200px;
   border: 3px solid rgb(201, 201, 201);
-}
-
-.teambottom {
-  width: 70vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  margin-top: 40px;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-around; */
-}
-
-.eachicon {
-  width: 100px;
-  height: 100px;
-  margin-top: 10px;
-  background-size: cover;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border: 1px solid /showteam#000;
-}
-
-.eachicon:hover {
-  border: 1px solid white;
-  -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
 }
 
 /* showteam/------------------------------ */
@@ -214,11 +154,7 @@ body {
 }
 
 .displaystats {
-  fill: teal;
-  stroke: yellow;
+  fill: #335;
+  stroke: #fb0;
   stroke-width: 1;
-}
-
-.shape {
-  fill-opacity: 1;
 }
