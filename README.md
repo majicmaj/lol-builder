@@ -6,3 +6,4 @@ keep in mind that this project is still a WIP, currently the edit button is not 
 
 ## Contribution
 Pull requests are welcome! big changes submit an issue so we can chat about it.
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z01WU4W)
