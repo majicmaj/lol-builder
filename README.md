@@ -1,5 +1,6 @@
 # League of Legends team builder
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z01WU4W)
+
 This application serves as my second project at General Assembly. feel free to check out the live example:
 https://lolbuilder.netlify.com/
 
